@@ -1,7 +1,7 @@
 name: github/cpp-tests
 version: 0.0.0
 dependencies:
-    github/cpp-all: ^0.0.0
-    github/cpp-queries: ^0.0.0
+    github/cpp-all: ^0.0.1
+    github/cpp-queries: ^0.0.1
 extractor: cpp
 tests: .

@@ -1,6 +1,6 @@
 name: github/cpp-queries
-version: 0.0.0
+version: 0.0.1
 dependencies:
-    github/cpp-all: ^0.0.0
+    github/cpp-all: ^0.0.1
 suites: codeql-suites
 extractor: cpp
