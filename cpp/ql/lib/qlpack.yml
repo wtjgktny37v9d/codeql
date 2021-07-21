@@ -1,6 +1,5 @@
-name: github/cpp-all
+name: codeql/cpp-all
 version: 0.0.1
 dbscheme: semmlecode.cpp.dbscheme
-suites: codeql-suites
 extractor: cpp
 library: true

@@ -1,6 +1,8 @@
-name: github/cpp-queries
+name: codeql/cpp-queries
 version: 0.0.1
 dependencies:
-    github/cpp-all: ^0.0.1
+    codeql/cpp-all: ^0.0.1
+    codeql/suite-helpers: ^0.0.1
 suites: codeql-suites
 extractor: cpp
+defaultSuiteFile: codeql-suites/cpp-code-scanning.qls

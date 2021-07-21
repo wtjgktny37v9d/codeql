@@ -5,6 +5,7 @@
 
 # query compilation caches
 .cache
+data
 
 # qltest projects and artifacts
 */ql/test/**/*.testproj
@@ -27,3 +28,4 @@
 .codeql/
 
 csharp/extractor/Semmle.Extraction.CSharp.Driver/Properties/launchSettings.json
+
