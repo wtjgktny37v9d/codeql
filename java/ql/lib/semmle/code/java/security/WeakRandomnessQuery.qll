@@ -2,6 +2,7 @@
 
 import java
 import semmle.code.java.frameworks.Servlets
+import semmle.code.java.security.SensitiveActions
 import semmle.code.java.dataflow.TaintTracking
 import semmle.code.java.security.RandomQuery
 
@@ -74,6 +75,10 @@ private class CookieSink extends WeakRandomnessSink {
   }
 }
 
+private class SensitiveActionSink extends WeakRandomnessSink {
+  SensitiveActionSink() { this.asExpr() instanceof SensitiveExpr }
+}
+
 /**
  * Holds if there is a method access which converts `bytes` to the string `str`.
  */
@@ -93,7 +98,13 @@ module WeakRandomnessConfig implements DataFlow::ConfigSig {
 
   predicate isBarrier(DataFlow::Node n) { n.getTypeBound() instanceof SafeRandomImplementation }
 
+  predicate isBarrierIn(DataFlow::Node n) { isSource(n) }
+
   predicate isAdditionalFlowStep(DataFlow::Node n1, DataFlow::Node n2) {
+    n1.asExpr() = n2.asExpr().(BinaryExpr).getAnOperand()
+    or
+    n1.asExpr() = n2.asExpr().(UnaryExpr).getExpr()
+    or
     exists(MethodAccess ma, Method m |
       n1.asExpr() = ma.getQualifier() and
       ma.getMethod() = m and
