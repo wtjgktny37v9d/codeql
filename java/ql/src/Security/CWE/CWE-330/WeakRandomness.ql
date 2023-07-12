@@ -3,6 +3,7 @@
  * @description Using a weak source of randomness may allow an attacker to predict the generated values.
  * @kind path-problem
  * @problem.severity error
+ * @security-severity 8.6
  * @precision high
  * @id java/weak-randomness
  * @tags security
