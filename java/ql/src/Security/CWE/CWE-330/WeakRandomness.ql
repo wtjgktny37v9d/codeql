@@ -1,5 +1,5 @@
 /**
- * @name WeakRandomness
+ * @name Weak Randomness
  * @description Using a weak source of randomness may allow an attacker to predict the generated values.
  * @kind path-problem
  * @problem.severity error
