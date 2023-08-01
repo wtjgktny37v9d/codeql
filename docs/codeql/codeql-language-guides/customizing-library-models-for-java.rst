@@ -329,6 +329,7 @@ The following sink kinds are supported:
 
 - **bean-validation**: A sink that can be used for insecure bean validation, such as in calls to **ConstraintValidatorContext.buildConstraintViolationWithTemplate**.
 - **command-injection**: A sink that can be used to inject shell commands, such as in calls to **Runtime.exec**.
+- **crypto-parameter**: A sink that is used in a cryptographic operation, such as in calls to **new javax.crypto.spec.IvParameterSpec**.
 - **file-content-store**: A sink that can be used to control the contents of a file, such as in a **Files.write** call.
 - **fragment-injection**: A sink that can be used for Android fragment injection, such as in a **FragmentTransaction.replace** call.
 - **groovy-injection**: A sink that can be used for Groovy injection, such as in a **GroovyShell.evaluate** call.
