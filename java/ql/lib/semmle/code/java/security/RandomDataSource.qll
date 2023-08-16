@@ -157,12 +157,11 @@ class ApacheCommonsRandomSource extends RandomDataSource {
  * A method access calling a method declared on `org.apache.commons.lang3.RandomStringUtils`
  */
 class ApacheCommonsRandomStringSource extends RandomDataSource {
-  Method m;
-
   ApacheCommonsRandomStringSource() {
-    m = this.getMethod() and
-    m.getName().matches("random%") and
-    m.getDeclaringType().hasQualifiedName("org.apache.commons.lang3", "RandomStringUtils")
+    exists(Method m | m = this.getMethod() |
+      m.getName().matches("random%") and
+      m.getDeclaringType().hasQualifiedName("org.apache.commons.lang3", "RandomStringUtils")
+    )
   }
 
   override Expr getOutput() { result = this }
